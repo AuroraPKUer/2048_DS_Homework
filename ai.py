@@ -109,16 +109,17 @@ class AI:
             return res / len(slots)
 
     def get_dynamic_depth(self, board):
-        # 统计空位数
-        empty_count = 0
-        for i in range(16):
-            if not (board & (0xF << (i * 4))):
-                empty_count += 1
+        # # 统计空位数
+        # empty_count = 0
+        # for i in range(16):
+        #     if not (board & (0xF << (i * 4))):
+        #         empty_count += 1
 
-        if empty_count <= 4:
-            return constants.DEPTH + 2
-        else:
-            return constants.DEPTH
+        # if empty_count <= 4:
+        #     return constants.DEPTH + 2
+        # else:
+        #     return constants.DEPTH
+        return constants.DEPTH
 
     def get_best_move(self, board):
         best_move, max_score = -1, -float("inf")
