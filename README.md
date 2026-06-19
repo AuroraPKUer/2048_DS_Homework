@@ -15,8 +15,8 @@
 ### 2. 克隆项目
 打开终端（或 CMD），运行以下命令下载本项目：
 ```bash
-git clone https://github.com/你的用户名/你的仓库名.git
-cd 你的仓库名
+git clone https://github.com/AuroraPKUer/2048_DS_Homework.git
+cd 2048_DS_Homework
 ```
 
 ### 3. 安装依赖
