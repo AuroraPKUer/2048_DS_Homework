@@ -9,7 +9,6 @@ class GameLogic:
         """计算一行的移动结果和评分"""
         line = [(row >> (4 * i)) & 0xF for i in range(4)]
 
-        # 启发式组件: 统计空位、总和、单调性
         empty = line.count(0)
         s_sum = sum(float(p) ** 3.5 for p in line if p > 0)
 
@@ -20,7 +19,6 @@ class GameLogic:
             else:
                 mono_right += line[i + 1] ** 4 - line[i] ** 4
 
-        # 结果行计算 (左移)
         new_line = [p for p in line if p != 0]
         res_line = []
         i = 0
@@ -37,7 +35,6 @@ class GameLogic:
         for idx, p in enumerate(res_line):
             res_row |= p << (4 * idx)
 
-        # 计算该行部分分
         h_score = (
             constants.EMPTY_WEIGHT * empty
             - constants.MONOTONICITY_WEIGHT * min(mono_left, mono_right)
